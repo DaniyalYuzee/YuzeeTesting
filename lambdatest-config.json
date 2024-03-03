@@ -1,0 +1,33 @@
+{
+   "lambdatest_auth": {
+      "username": "daniyalyuzee",
+      "access_key": "YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P"
+   },
+   "browsers": [
+      {
+         "browser": "Chrome",
+         "platform": "Windows 10",
+         "versions": [
+            "latest-1"
+         ]
+      }
+   ],
+   "run_settings": {
+      
+    
+      "reporter_config_file": "base_reporter_config.json",
+      "build_name": "Sample Test",
+      "parallels": 1,
+      "specs": "./cypress/e2e/2-advanced-examples/CreateCourseApplication.cy.js",
+      "ignore_files": "",
+      "network": true,
+      "headless": false,
+      "npm_dependencies": {
+         "cypress": "10"
+      }
+   },
+   "tunnel_settings": {
+      "tunnel": false,
+      "tunnel_name": null
+   }
+}
