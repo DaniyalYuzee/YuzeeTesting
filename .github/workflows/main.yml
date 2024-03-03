@@ -1,9 +1,9 @@
-name: Scheduled Cypress Tests on LambdaTest
+name: Scheduled Cypress Tests on LambdaTest new workflow
 
 on:
-  push:
-    branches:
-      - 'main'
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/2 * * * *'
  
 
 
@@ -45,7 +45,7 @@ jobs:
           npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
           
 
-      # - namee: Upload test report
+      # - name: Upload test report
       #   uses: actions/upload-artifact@v2
       #   with:
       #     name: test-reports
