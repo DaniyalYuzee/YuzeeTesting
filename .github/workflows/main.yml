@@ -1,0 +1,56 @@
+name: Scheduled Cypress Tests on LambdaTest
+
+on:
+  push:
+    branches:
+      - 'main'
+ 
+
+
+jobs:
+  run-tests:
+    runs-on: windows-latest
+    # if: github.event_name == 'schedule'
+    steps:
+      - name: Run Tests
+        run: echo "Running tests..."
+
+
+      - name: Install LambdaTest CLI
+        run: npm install -g lambdatest-cli
+            lambdatest-cypress init --cv=10
+      
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Cypress
+        run: npm install cypress
+
+     
+
+      - name: Install LambdaTest CLI
+        run:  npm i @lambdatest/node-tunnel
+
+      
+
+      - name: Run Cypress tests on LambdaTest
+        run: |
+          npm install -g lambdatest-cli
+          npx lambda-tunnel --user daniyalyuzee --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
+          npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
+          
+
+      # - name: Upload test report
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: test-reports
+      #     path: D:\LambdaCypress\test-reports  
+  
+      # - name: Run Cypress tests on LambdaTest
+      #   run: 
+      #       lambdatest cypress run --headless --record --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P --project-name "CypressTest" --build-name "Test"
