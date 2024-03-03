@@ -45,7 +45,7 @@ jobs:
           npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
           
 
-      # - name: Upload test report
+      # - namee: Upload test report
       #   uses: actions/upload-artifact@v2
       #   with:
       #     name: test-reports
