@@ -46,7 +46,6 @@ jobs:
           npx lambda-tunnel --user daniyalyuzee --key YrwO9ihRVb94XnkLH1TYUkV79RmyfcygWllLAWd542hS0dDb4P
           npx cypress run --headless --spec "cypress\e2e\2-advanced-examples\CreateCourseApplication.cy.js"
           
-
       # - name: Upload test report
       #   uses: actions/upload-artifact@v2
       #   with:
