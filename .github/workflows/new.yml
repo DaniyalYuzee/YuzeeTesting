@@ -1,12 +1,10 @@
 name: Scheduled Cypress Tests on LambdaTest new workflow
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: '0 */12 * * *'
-
+    
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/2 * * * *'
  
 
 
