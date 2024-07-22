@@ -12,7 +12,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
       cy.contains('Sign in').click();
   //comment add
       cy.get('.row > :nth-child(1) > .form-control').clear()
-      cy.get('.row > :nth-child(1) > .form-control').type('gaellelomas@yopmail.com')
+      cy.get('.row > :nth-child(1) > .form-control').type('johnmccormack@yopmail.com')
   
       cy.get('.pass-fild > .form-control').clear()
       cy.get('.pass-fild > .form-control').type('Admin12345!')
